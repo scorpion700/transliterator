@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аварский транслитератор: Кириллица → Латиница/Аджам</title>
+
+<!-- Favicon для всех устройств -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%234a6fa5'/><stop offset='100%' stop-color='%233a5a8c'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='72' font-family='Arial' font-size='60' font-weight='bold' text-anchor='middle' fill='white' opacity='0.9'>А</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZbBDcIwDEWTSQrDgLopDFAYprABKzALO5QNYKJ2gnIkBSd1Gv90Qv4AQa3k00mO47p8JEyW3uCBe9ICh6Qdzg1rmD+4ZhRI4Hag4g6p4oQ8vRXH5g5JV3tZ3UGBZCPvX3dxVHtU6IakJ0j1Z2wDpBoT9uLfCHgF9k7lnZ2AN0+1E2qDACd3YOvInuFsFZirfTtzAtQe1VwBWx/niDu1UoCXvUYBa++ILQF7j0q2gK23M3UBo5IEqJdNZKtm8a/7hAIxYr7CWOuPIVkDySZItT+C5GQB/XhC+WvAYCGW3zZekGQ31O8jXzQn4J8/5sAvCAAAnKXKf41S30EAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADnSURBVHgB1ZRBCsIwEEWzI8ENuBPvIHgHwTt47yB4hzqC7sWVm2rTIE2nv8lA3AivpJ3kZ9JpkqQJTdMMXgAcOHJj2HNj3IV+NbAh1+CafMCFG/ICbnlJDuCcbMCRfIE5+SZz8kHW4CMZwC9U5OyokCM4BwfgZPoYr6SblX7C71BC3+OVdAPQzYpiCQaQmc8WU2CWf2zAMQdmyQfeNgD5qL0B9K8o0w0A8lF7A+hfUaYbAOSj9gbQv6JMNwDIR+0NIN5XFOsGAPmovQH0ryjTDQCFC9kNUN0NyQAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIhSURBVHgB7d2xbdRQFIXhg8QGJISvQHgCOoQJSBmKlGEIGoagYQgGhqAoBhAlBSVlKBJWYIM7n/Mk9/vk9pGObElfbN8kSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSdJkbq68Xtt/kv6T7xG8i+BDV9/iCPwcwduu3kXwuqtvEdxG8Karr13dRfC6q69d3UXwuqt7vF3/qKvv6TCCV119jeBNV/d4e72lZEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSpOl4Dvrp+DD90x2DnzX1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU1+AXzn1BfiVU19g5t/wA27o9WxMhxPBAAAAAElFTkSuQmCC">
+<meta name="theme-color" content="#4a6fa5">
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+	html {
+	font-size: 16px;
+	}
+
+	body {
+  font-size: clamp(14px, 3.5vw, 16px);
+	}
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+  }
+  
+  .subtitle {
+    color: #4a6fa5;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+  
+  .language-name {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .converter {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+  
+  textarea:focus {
+    border-color: #4a6fa5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #4a6fa5;
+  }
+  
+  .mode-selector {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 10px 0;
+    padding: 15px;
+    background: #f0f8ff;
+    border-radius: 8px;
+  }
+  
+  .option-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  select {
+    padding: 10px 15px;
+    border: 2px solid #4a6fa5;
+    border-radius: 6px;
+    background: white;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #4a6fa5 0%, #3a5a8c 100%);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(58, 90, 140, 0.3);
+  }
+  
+  .btn-secondary {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+  }
+  
+  .btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+  }
+  
+  .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+  }
+  
+  .output-container {
+    margin-top: 20px;
+  }
+  
+  .output-box {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 120px;
+    font-size: 18px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Arial Unicode MS', 'Segoe UI Symbol', sans-serif;
+    direction: ltr;
+  }
+  
+  .output-box.arabic {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Scheherazade', 'Arial', sans-serif;
+    font-size: 22px;
+    line-height: 2;
+  }
+  
+  .output-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .stats {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .alphabet-table {
+    margin-top: 40px;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  
+  th {
+    background: linear-gradient(135deg, #4a6fa5 0%, #3a5a8c 100%);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  tr:hover {
+    background: #f8fafc;
+  }
+  
+  .arabic-cell {
+    font-size: 24px;
+    font-family: 'Scheherazade', 'Arial', sans-serif;
+    direction: rtl;
+  }
+  
+  .note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    color: #856404;
+  }
+  
+  .tips {
+    background: #d1ecf1;
+    border-left: 4px solid #0dcaf0;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    color: #055160;
+  }
+  
+  .harakat-example {
+    background: #e8f5e8;
+    border-left: 4px solid #28a745;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    color: #155724;
+    font-family: 'Scheherazade', 'Arial', sans-serif;
+    font-size: 18px;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: #6c757d;
+    font-size: 0.9em;
+  }
+  
+  .sample-texts {
+    margin-top: 20px;
+  }
+  
+  .sample-btn {
+    background: #e9ecef;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .sample-btn:hover {
+    background: #dee2e6;
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    
+    .controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .mode-selector, .buttons {
+      width: 100%;
+    }
+    
+    .buttons {
+      flex-direction: column;
+    }
+    
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+    
+    .output-box.arabic {
+      font-size: 20px;
+    }
+	@media (max-width: 360px) {
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .output-box {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .output-box.arabic {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .stats {
+    font-size: 12px;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+
+  .controls {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .mode-selector {
+    max-width: 300px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  button {
+    width: auto;
+  }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .header {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  textarea {
+    min-height: 80px;
+  }
+
+  .controls {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .arabic-cell {
+    font-size: 20px;
+  }
+}
+
+button,
+.sample-btn {
+  min-height: 44px; /* стандарт Apple/Google */
+}
+
+  
+}
+
+  }
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Scheherazade:wght@400;700&display=swap">
+</head>
+<body>
+
+<div class="header">
+  <h1>Аварский транслитератор</h1>
+  <p class="subtitle">Конвертер аварского алфавита с поддержкой огласовок</p>
+  <p>Кириллица → Латиница / Арабское письмо (<span class="language-name">Аджам</span>)</p>
+</div>
+
+<div class="converter">
+  <div class="input-group">
+    <label for="input">Введите текст на аварском (кириллица):</label>
+    <textarea id="input" placeholder="Например: РорчӀами, хӀурматиял аварал!" rows="5"></textarea>
+  </div>
+  
+  <div class="note">
+    <strong>💡 Примечание:</strong> Для ввода палочки (Ӏ) можно использовать символы: <code>I</code>, <code>1</code>, <code>l</code>, <code>|</code>, <code>!</code>. Они автоматически преобразуются.
+  </div>
+  
+  
+  <div class="controls">
+    <div class="mode-selector">
+      <label for="mode">Направление конвертации:</label>
+      <select id="mode">
+        <option value="latin">Кириллица → Латиница</option>
+        <option value="adjam">Кириллица → Аджам (арабица)</option>
+      </select>
+    </div>
+    
+    <div class="options" id="adjamOptions" style="display: none;">
+      <div class="option-group">
+        <input type="checkbox" id="harakatToggle" checked>
+        <label for="harakatToggle">Добавить огласовки (харакаты)</label>
+      </div>
+      <div class="option-group">
+        <input type="checkbox" id="optimizeToggle" checked>
+        <label for="optimizeToggle">Оптимизировать огласовки</label>
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button id="convert" class="btn-primary">
+        <span>🔄</span> Преобразовать
+      </button>
+      <button id="clear" class="btn-secondary">
+        <span>🗑️</span> Очистить
+      </button>
+      <button id="copy" class="btn-success">
+        <span>📋</span> Копировать
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="output-container">
+    <div class="output-title">
+      <label>Результат:</label>
+      <div class="stats">
+        <span id="charCount">0 символов</span> • 
+        <span id="conversionTime">Время: 0мс</span> •
+        <span id="harakatStatus"></span>
+      </div>
+    </div>
+    <div class="output-box" id="output">Здесь появится преобразованный текст...</div>
+  </div>
+</div>
+
+<div class="tips">
+  <strong>📚 Советы:</strong>
+  <ul>
+    <li>Огласовки (харакаты) делают арабский текст более читаемым</li>
+    <li>Сукун (ـْ) показывает, что после согласной нет гласной</li>
+    <li>Для арабского письма текст выравнивается справа налево</li>
+    <li>Используйте примеры текстов для быстрого тестирования</li>
+  </ul>
+</div>
+
+<div class="alphabet-table">
+  <h2>Аварский алфавит: таблица соответствий</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Кириллица</th>
+        <th>Латиница</th>
+        <th>Аджам (арабица)</th>
+      </tr>
+    </thead>
+    <tbody id="demo">
+      <!-- Сгенерируется скриптом -->
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <p>Аварский транслитератор v3.0 • Полная поддержка огласовок • Поддержка Unicode</p>
+  <p>Для отображения арабских символов рекомендуется шрифт Scheherazade</p>
+</div>
+
+<script>
+// ============================================================================
+// ОСНОВНЫЕ КОНСТАНТЫ И ФУНКЦИИ
+// ============================================================================
+
+// Нормализация палочки
+function normalizeSticks(text) {
+  return text.replace(/[1lI|!]/g, "Ӏ");
+}
+
+// Обновление статистики
+function updateStats(inputLength, conversionTime, withHarakat = false) {
+  document.getElementById('charCount').textContent = `${inputLength} символов`;
+  document.getElementById('conversionTime').textContent = `Время: ${conversionTime}мс`;
+  document.getElementById('harakatStatus').textContent = 
+    withHarakat ? 'С огласовками' : 'Без огласовок';
+}
+
+// ============================================================================
+// КАРТЫ ТРАНСЛИТЕРАЦИИ
+// ============================================================================
+
+// 1. КАРТА ДЛЯ ЛАТИНИЦЫ
+const latinMap = {
+  // ДИГРАФЫ (должны быть ПЕРВЫМИ)
+  "Гъ": "Ƣ", "гъ": "ƣ",
+  "Гь": "H", "гь": "h",
+  "ГӀ": "Ⱨ", "гӀ": "ⱨ",
+  "Къ": "Q", "къ": "q",
+  "Кь": "Q̠", "кь": "q̠",
+  "КӀ": "Ⱪ", "кӀ": "ⱪ",
+  "Лъ": "Ł", "лъ": "ł",
+  "ТӀ": "Ţ", "тӀ": "ţ",
+  "Хъ": "Ӿ", "хъ": "ӿ",
+  "Хь": "Ҳ", "хь": "ҳ",
+  "ХӀ": "Ħ", "хӀ": "ħ",
+  "ЦӀ": "Ⱬ", "цӀ": "ⱬ",
+  "ЧӀ": "Ç", "чӀ": "ç",
+  "ЛӀ": "Ļ", "лӀ": "ļ",
+  
+  // ОСНОВНЫЕ БУКВЫ
+  "А": "A", "а": "a",
+  "Б": "B", "б": "b", 
+  "В": "V", "в": "v",
+  "Г": "G", "г": "g",
+  "Д": "D", "д": "d",
+  "Е": "Je", "е": "je",
+  "Ё": "Jo", "ё": "jo",
+  "Ж": "Ƶ", "ж": "ƶ",
+  "З": "Z", "з": "z",
+  "И": "I", "и": "i",
+  "Й": "J", "й": "j",
+  "К": "K", "к": "k",
+  "Л": "L", "л": "l",
+  "М": "M", "м": "m",
+  "Н": "N", "н": "n",
+  "О": "O", "о": "o",
+  "П": "P", "п": "p",
+  "Р": "R", "р": "r",
+  "С": "S", "с": "s",
+  "Т": "T", "т": "t",
+  "У": "U", "у": "u",
+  "Ф": "F", "ф": "f",
+  "Х": "X", "х": "x",
+  "Ц": "S̵", "ц": "ᵴ",
+  "Ч": "C", "ч": "c",
+  "Ш": "Ş", "ш": "ş",
+  "Щ": "ŞŞ", "щ": "şş",
+  "Ъ": "'", "ъ": "'",
+  "Ы": "Y", "ы": "y",
+  "Ь": "'", "ь": "'",
+  "Э": "E", "э": "e",
+  "Ю": "Ju", "ю": "ju",
+  "Я": "Ja", "я": "ja"
+};
+
+// 2. КАРТА ДЛЯ АДЖАМА БЕЗ ОГЛАСОВОК
+const adjamMapSimple = {
+  // ДИГРАФЫ
+  "ГӀ": "ع", "гӀ": "ع",
+  "КӀ": "ق", "кӀ": "ق",
+  "ТӀ": "ط", "тӀ": "ط",
+  "ЦӀ": "ز", "цӀ": "ز",
+  "ЧӀ": "ج", "чӀ": "ج",
+  "ХӀ": "ح", "хӀ": "ح",
+  "Гъ": "غ", "гъ": "غ",
+  "Гь": "ه", "гь": "ه",
+  "Къ": "ق", "къ": "ق",
+  "Кь": "ك", "кь": "ك",
+  "Хъ": "خ", "хъ": "خ",
+  "Хь": "ح", "хь": "ح",
+  "Лъ": "ل", "лъ": "ل",
+  "ЛӀ": "ڷ", "лӀ": "ڷ",
+  
+  // ОДИНОЧНЫЕ БУКВЫ
+  "А": "ا", "а": "ا",
+  "Б": "ب", "б": "ب",
+  "В": "و", "в": "و",
+  "Г": "گ", "г": "گ",
+  "Д": "د", "д": "د",
+  "Е": "ي", "е": "ي",
+  "Ё": "يو", "ё": "يو",
+  "Ж": "ج", "ж": "ج",
+  "З": "ز", "з": "ز",
+  "И": "ا", "и": "ا",
+  "Й": "ي", "й": "ي",
+  "К": "ك", "ك": "ك",
+  "Л": "ل", "ل": "ل",
+  "М": "م", "م": "م",
+  "Н": "ن", "ن": "ن",
+  "О": "و", "о": "و",
+  "П": "پ", "پ": "پ",
+  "Р": "ر", "ر": "ر",
+  "С": "س", "س": "س",
+  "Т": "ت", "ت": "ت",
+  "У": "و", "у": "و",
+  "Ф": "ف", "ف": "ف",
+  "Х": "خ", "خ": "خ",
+  "Ц": "تس", "تس": "تس",
+  "Ч": "چ", "چ": "چ",
+  "Ш": "ش", "ش": "ش",
+  "Щ": "شش", "شش": "شش",
+  "Э": "ا", "ا": "ا",
+  "Ю": "يو", "يو": "يو",
+  "Я": "يا", "يا": "يا",
+  "Ь": "", "ь": "",
+  "Ъ": "", "ъ": ""
+};
+
+// 3. КАРТА ДЛЯ АДЖАМА С ОГЛАСОВКАМИ
+const adjamMapWithHarakat = {
+  // ДИГРАФЫ С ОГЛАСОВКАМИ
+  "ГӀ": "عَ", "гӀ": "عَ",
+  "КӀ": "قُ", "кӀ": "قُ",
+  "ТӀ": "طِ", "тӀ": "طِ",
+  "ЦӀ": "زِ", "цӀ": "زِ",
+  "ЧӀ": "جِ", "чӀ": "جِ",
+  "ХӀ": "حَ", "хӀ": "حَ",
+  "Гъ": "غَ", "гъ": "غَ",
+  "Гь": "هَ", "гь": "هَ",
+  "Къ": "قَ", "къ": "قَ",
+  "Кь": "كَ", "кь": "كَ",
+  "Хъ": "خَ", "хъ": "خَ",
+  "Хь": "حَ", "хь": "حَ",
+  "Лъ": "لَ", "лъ": "لَ",
+  "ЛӀ": "ڷ", "лӀ": "ڷ",
+  
+  // ГЛАСНЫЕ С ОГЛАСОВКАМИ
+  "А": "اَ", "а": "َ",
+  "Е": "يِ", "е": "ِ",
+  "Ё": "يُو", "ё": "ُو",
+  "И": "اِ", "и": "ِ",
+  "О": "وُ", "о": "ُ",
+  "У": "وُ", "у": "ُ",
+  "Э": "اَ", "э": "َ",
+  "Ю": "يُو", "ю": "ُو",
+  "Я": "يَ", "я": "َ",
+  "Ы": "ِ", "ы": "ِ",
+  
+  // СОГЛАСНЫЕ (без огласовок по умолчанию)
+  "Б": "ب", "б": "ب",
+  "В": "و", "в": "و",
+  "Г": "گ", "г": "گ",
+  "Д": "د", "د": "د",
+  "Ж": "ج", "ж": "ج",
+  "З": "ز", "з": "ز",
+  "Й": "ي", "й": "ي",
+  "К": "ك", "ك": "ك",
+  "Л": "ل", "л": "ل",
+  "М": "م", "م": "م",
+  "Н": "ن", "ن": "ن",
+  "П": "پ", "پ": "پ",
+  "Р": "ر", "ر": "ر",
+  "С": "س", "س": "س",
+  "Т": "ت", "ت": "ت",
+  "Ф": "ف", "ф": "ف",
+  "Х": "خ", "خ": "خ",
+  "Ц": "تْس", "ц": "تْس",
+  "Ч": "چ", "چ": "چ",
+  "Ш": "ش", "ш": "ش",
+  "Щ": "شْش", "شش": "شْش",
+  
+  // Знаки
+  "Ь": "", "ь": "",
+  "Ъ": "", "ъ": ""
+};
+
+// ============================================================================
+// ФУНКЦИИ ТРАНСЛИТЕРАЦИИ
+// ============================================================================
+
+// Общая функция транслитерации
+function transliterate(text, map) {
+  const startTime = performance.now();
+  
+  // Нормализуем палочку
+  let normalizedText = normalizeSticks(text);
+  let result = normalizedText;
+  
+  // Разделяем на диграфы и одиночные
+  const digraphs = [];
+  const singleLetters = [];
+  
+  for (const key in map) {
+    if (key.length >= 2) {
+      digraphs.push({ 
+        pattern: new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
+        replacement: map[key],
+        length: key.length
+      });
+    } else {
+      singleLetters.push({
+        pattern: new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
+        replacement: map[key],
+        length: key.length
+      });
+    }
+  }
+  
+  // Сортируем диграфы по длине (самые длинные сначала)
+  digraphs.sort((a, b) => b.length - a.length);
+  
+  // 1. Заменяем диграфы
+  for (const {pattern, replacement} of digraphs) {
+    result = result.replace(pattern, replacement);
+  }
+  
+  // 2. Заменяем одиночные буквы
+  for (const {pattern, replacement} of singleLetters) {
+    result = result.replace(pattern, replacement);
+  }
+  
+  // 3. Убираем оставшиеся палочки
+  result = result.replace(/Ӏ/g, '');
+  
+  const endTime = performance.now();
+  
+  return {
+    text: result,
+    time: Math.round(endTime - startTime)
+  };
+}
+
+// Транслитерация в латиницу
+function transliterateToLatin(text) {
+  return transliterate(text, latinMap);
+}
+
+// Транслитерация в аджам без огласовок
+function transliterateToAdjamSimple(text) {
+  const result = transliterate(text, adjamMapSimple);
+  
+  // Дополнительная оптимизация для аджама
+  result.text = optimizeArabicText(result.text, false);
+  
+  return result;
+}
+
+// Транслитерация в аджам с огласовками
+function transliterateToAdjamWithHarakat(text) {
+  const result = transliterate(text, adjamMapWithHarakat);
+  
+  // Оптимизация огласовок
+  const optimize = document.getElementById('optimizeToggle').checked;
+  result.text = optimizeArabicText(result.text, true, optimize);
+  
+  return result;
+}
+
+// ============================================================================
+// ОПТИМИЗАЦИЯ АРАБСКОГО ТЕКСТА
+// ============================================================================
+
+function optimizeArabicText(text, withHarakat = false, optimize = true) {
+  if (!withHarakat || !optimize) {
+    // Без огласовок или без оптимизации
+    return text;
+  }
+  
+  let result = text;
+  
+  // 1. Убираем огласовки с последней буквы перед пробелом/знаком препинания
+  result = result.replace(/َ(\s|[\.\?\!,؛])/g, '$1');
+  result = result.replace(/ِ(\s|[\.\?\!,؛])/g, '$1');
+  result = result.replace(/ُ(\s|[\.\?\!,؛])/g, '$1');
+  result = result.replace(/ْ(\s|[\.\?\!,؛])/g, '$1');
+  
+  // 2. Убираем двойные огласовки
+  result = result.replace(/ََ/g, 'َ');
+  result = result.replace(/ِِ/g, 'ِ');
+  result = result.replace(/ُُ/g, 'ُ');
+  result = result.replace(/ْْ/g, 'ْ');
+  
+  // 3. Исправляем сочетания гласных
+  result = result.replace(/َاَ/g, 'َا');
+  result = result.replace(/ِيِ/g, 'ِي');
+  result = result.replace(/ُوُ/g, 'ُو');
+  
+  // 4. Убираем огласовки перед другим харакатом
+  const harakatPattern = /([َُِ])([َُِ])/g;
+  while (harakatPattern.test(result)) {
+    result = result.replace(harakatPattern, '$2');
+  }
+  
+  // 5. Добавляем сукун для согласных без гласных в середине слова
+  result = result.replace(/([بتثجحخدذرزسشصضطظعغفقكلمنهوي])([بتثجحخدذرزسشصضطظعغفقكلمنهوي])/g, 
+    (match, p1, p2) => {
+      // Если между двумя согласными нет огласовки
+      if (!p1.match(/[َُِ]/) && !p2.match(/[َُِ]/)) {
+        return p1 + 'ْ' + p2;
+      }
+      return match;
+    });
+  
+  // 6. Убираем лишние алифы в начале слова
+  result = result.replace(/^اََا/g, 'اَ');
+  result = result.replace(/^اَِا/g, 'اِ');
+  result = result.replace(/^اَُا/g, 'اُ');
+  
+  return result;
+}
+
+// ============================================================================
+// ГЕНЕРАЦИЯ ТАБЛИЦЫ АЛФАВИТА (3 СТОЛБЦА)
+// ============================================================================
+
+function generateAlphabetTable() {
+  const tbody = document.getElementById('demo');
+  
+  const alphabet = [
+    { cyr: "А а", lat: "A a", adj: "ا" },
+    { cyr: "Б б", lat: "B b", adj: "ب" },
+    { cyr: "В в", lat: "V v", adj: "و" },
+    { cyr: "Г г", lat: "G g", adj: "گ" },
+    { cyr: "Гъ гъ", lat: "Ƣ ƣ", adj: "غ" },
+    { cyr: "Гь гь", lat: "H h", adj: "ه" },
+    { cyr: "ГӀ гӀ", lat: "Ⱨ ⱨ", adj: "ع" },
+    { cyr: "Д д", lat: "D d", adj: "د" },
+    { cyr: "Е е", lat: "Je je", adj: "ي" },
+    { cyr: "Ё ё", lat: "Jo jo", adj: "يو" },
+    { cyr: "Ж ж", lat: "Ƶ ƶ", adj: "ج" },
+    { cyr: "З з", lat: "Z z", adj: "ز" },
+    { cyr: "И и", lat: "I i", adj: "ا" },
+    { cyr: "Й й", lat: "J j", adj: "ي" },
+    { cyr: "К к", lat: "K k", adj: "ك" },
+    { cyr: "Къ къ", lat: "Q q", adj: "ق" },
+    { cyr: "Кь кь", lat: "Q̠ q̠", adj: "ك" },
+    { cyr: "КӀ кӀ", lat: "Ⱪ ⱪ", adj: "ق" },
+    { cyr: "Л л", lat: "L l", adj: "ل" },
+    { cyr: "Лъ лъ", lat: "Ł ł", adj: "ل" },
+	{ cyr: "ЛӀ лӀ", lat: "Ļ ļ", adj: "ڷ"},
+    { cyr: "М м", lat: "M m", adj: "م" },
+    { cyr: "Н н", lat: "N n", adj: "ن" },
+    { cyr: "О о", lat: "O o", adj: "و" },
+    { cyr: "П п", lat: "P p", adj: "پ" },
+    { cyr: "Р р", lat: "R r", adj: "ر" },
+    { cyr: "С с", lat: "S s", adj: "س" },
+    { cyr: "Т т", lat: "T t", adj: "ت" },
+    { cyr: "ТӀ тӀ", lat: "Ţ ţ", adj: "ط" },
+    { cyr: "У у", lat: "U u", adj: "و" },
+    { cyr: "Ф ф", lat: "F f", adj: "ف" },
+    { cyr: "Х х", lat: "X x", adj: "خ" },
+    { cyr: "Хъ хъ", lat: "Ӿ ӿ", adj: "خ" },
+    { cyr: "Хь хь", lat: "Ҳ ҳ", adj: "ح" },
+    { cyr: "ХӀ хӀ", lat: "Ħ ħ", adj: "ح" },
+    { cyr: "Ц ц", lat: "S̵ ᵴ", adj: "تس" },
+    { cyr: "ЦӀ цӀ", lat: "Ⱬ ⱬ", adj: "ز" },
+    { cyr: "Ч ч", lat: "C c", adj: "چ" },
+    { cyr: "ЧӀ чӀ", lat: "Ç ç", adj: "ج" },
+    { cyr: "Ш ш", lat: "Ş ş", adj: "ش" },
+    { cyr: "Щ щ", lat: "Ş̵ ş̵", adj: "شش" },
+    { cyr: "Э э", lat: "E e", adj: "ا" },
+    { cyr: "Ю ю", lat: "Ju ju", adj: "يو" },
+    { cyr: "Я я", lat: "Ja ja", adj: "يا" }
+  ];
+  
+  // Очищаем таблицу перед заполнением
+  tbody.innerHTML = '';
+  
+  alphabet.forEach(letter => {
+    const row = document.createElement('tr');
+    
+    row.innerHTML = `
+      <td><strong style="font-size: 1.1em">${letter.cyr}</strong></td>
+      <td style="font-family: 'Courier New', monospace">${letter.lat}</td>
+      <td class="arabic-cell">${letter.adj}</td>
+    `;
+    
+    tbody.appendChild(row);
+  });
+}
+
+// ============================================================================
+// ОБРАБОТЧИКИ СОБЫТИЙ И ИНИЦИАЛИЗАЦИЯ
+// ============================================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Элементы интерфейса
+  const inputEl = document.getElementById('input');
+  const modeEl = document.getElementById('mode');
+  const adjamOptionsEl = document.getElementById('adjamOptions');
+  const convertBtn = document.getElementById('convert');
+  const clearBtn = document.getElementById('clear');
+  const copyBtn = document.getElementById('copy');
+  const outputEl = document.getElementById('output');
+  
+  // Показываем/скрываем опции для аджама
+  function toggleAdjamOptions() {
+    const isAdjam = modeEl.value === 'adjam';
+    adjamOptionsEl.style.display = isAdjam ? 'flex' : 'none';
+  }
+  
+  // Конвертация текста
+  function convertText() {
+    let text = inputEl.value.trim();
+    
+    if (!text) {
+      outputEl.textContent = "Введите текст для преобразования...";
+      outputEl.className = "output-box";
+      updateStats(0, 0, false);
+      return;
+    }
+    
+    const mode = modeEl.value;
+    
+    if (mode === 'latin') {
+      const { text: result, time } = transliterateToLatin(text);
+      outputEl.textContent = result;
+      outputEl.className = "output-box";
+      updateStats(text.length, time, false);
+      
+    } else if (mode === 'adjam') {
+      const useHarakat = document.getElementById('harakatToggle').checked;
+      let result, time;
+      
+      if (useHarakat) {
+        const conversion = transliterateToAdjamWithHarakat(text);
+        result = conversion.text;
+        time = conversion.time;
+      } else {
+        const conversion = transliterateToAdjamSimple(text);
+        result = conversion.text;
+        time = conversion.time;
+      }
+      
+      outputEl.textContent = result;
+      outputEl.className = "output-box arabic";
+      updateStats(text.length, time, useHarakat);
+    }
+  }
+  
+  // События
+  modeEl.addEventListener('change', function() {
+    toggleAdjamOptions();
+    if (inputEl.value.trim()) {
+      convertText();
+    }
+  });
+  
+  convertBtn.addEventListener('click', convertText);
+  
+  document.getElementById('harakatToggle').addEventListener('change', function() {
+    if (inputEl.value.trim() && modeEl.value === 'adjam') {
+      convertText();
+    }
+  });
+  
+  document.getElementById('optimizeToggle').addEventListener('change', function() {
+    if (inputEl.value.trim() && modeEl.value === 'adjam' && 
+        document.getElementById('harakatToggle').checked) {
+      convertText();
+    }
+  });
+  
+  // Автоконвертация при вводе
+  let typingTimer;
+  inputEl.addEventListener('input', function() {
+    clearTimeout(typingTimer);
+    
+    if (this.value.trim().length > 0) {
+      typingTimer = setTimeout(convertText, 500);
+    } else {
+      outputEl.textContent = "Здесь появится преобразованный текст...";
+      outputEl.className = "output-box";
+      updateStats(0, 0, false);
+    }
+  });
+  
+  // Очистка
+  clearBtn.addEventListener('click', function() {
+    inputEl.value = '';
+    outputEl.textContent = 'Здесь появится преобразованный текст...';
+    outputEl.className = "output-box";
+    updateStats(0, 0, false);
+    inputEl.focus();
+  });
+  
+  // Копирование
+  copyBtn.addEventListener('click', function() {
+    const text = outputEl.textContent;
+    
+    if (!text || text.includes('появится') || text.includes('Введите текст')) {
+      alert('Нет текста для копирования!');
+      return;
+    }
+    
+    navigator.clipboard.writeText(text).then(() => {
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<span>✓</span> Скопировано!';
+      copyBtn.style.background = 'linear-gradient(135deg, #218838 0%, #1e7e34 100%)';
+      
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+        copyBtn.style.background = '';
+      }, 2000);
+    }).catch(err => {
+      console.error('Ошибка копирования: ', err);
+      alert('Не удалось скопировать текст. Скопируйте вручную.');
+    });
+  });
+  
+  // Примеры текстов
+  document.querySelectorAll('.sample-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const sampleText = this.getAttribute('data-text');
+      inputEl.value = sampleText;
+      inputEl.focus();
+      convertText();
+    });
+  });
+  
+  // Инициализация
+  toggleAdjamOptions();
+  updateStats(0, 0, false);
+  generateAlphabetTable();
+  
+  // Автофокус
+  setTimeout(() => inputEl.focus(), 100);
+});
+</script>
+
+</body>
+</html>
